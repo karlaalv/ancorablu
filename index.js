@@ -4,6 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            document.getElementById('products').innerHTML('Nome: ' + data.products[0].name)
+            document.getElementById('products').innerHTML = 'Nome: ' + data.products[0].name
         });
 });
