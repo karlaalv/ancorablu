@@ -1,4 +1,4 @@
-import Commerce from '@chec/commerce.js';
+const Commerce = require('@chec/commerce.js');
 
 exports.handler = async function (event, context) {
     console.log("Retrieving products")
