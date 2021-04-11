@@ -1,4 +1,4 @@
-$(function() {
+document.addEventListener("DOMContentLoaded", function() {
 console.log('funziono')
 document.
 fetch('/.netlify/functions/retrieve-products')
