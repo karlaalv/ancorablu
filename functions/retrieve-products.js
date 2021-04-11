@@ -1,10 +1,15 @@
-exports.handler = async function(event, context) {
+import Commerce from '@chec/commerce.js';
+
+exports.handler = async function (event, context) {
     console.log("Retrieving products")
-    return {
-        statusCode: 200,
-        body: JSON.stringify({products : [
-            {id : "AA001", name: "pizza", price: 13.50},
-            {id : "AA002", name: "coca", price: 3.50}
-        ]})
-    };
+    const commerce = new Commerce(
+        'pk_test_2592218f2ae77c7a987b880db97b4a8f3843d6a15647a'
+    );
+    commerce.products.list().then((product) => {
+        console.log("Products retrieved: ", product)
+        return {
+            statusCode: 200,
+            body: JSON.stringify({ products: product })
+        };
+    });
 } 
